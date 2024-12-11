@@ -1,4 +1,4 @@
-const apiBaseUrl = 'http://127.0.0.1:10000/api';
+const apiBaseUrl = 'https://license-system-nu.vercel.app/api';
 
 document.addEventListener('DOMContentLoaded', () => {
     const addUserBtn = document.getElementById('addUserBtn');
