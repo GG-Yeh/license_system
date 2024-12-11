@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             addViolation(apiBaseUrl, violationData)
                 .then(data => {
                     alert('Violation added successfully!');
-                    console.log('Response:', data);
+                    location.reload(); // 重载页面
                 })
                 .catch(error => {
                     console.error('Error:', error);
