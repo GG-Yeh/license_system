@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiBaseUrl = 'http://127.0.0.1:10000/api';
+    const apiBaseUrl = 'https://license-system-nu.vercel.app/api';
     const addViolationBtn = document.getElementById('addViolationBtn');
     const userIdField = document.getElementById('id');
     const licenseTypeSelect = document.getElementById('licenseType');
