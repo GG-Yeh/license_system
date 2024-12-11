@@ -66,6 +66,10 @@ api_classes = {
     "violations": ViolationAPI(BASE_URL)
 }
 
+@app.route('/')
+def home():
+    return jsonify({"message": "Welcome to the API"}), 200
+
 # 定義路由
 @app.route('/api/<resource>', methods=['GET'])
 def get_all(resource):
