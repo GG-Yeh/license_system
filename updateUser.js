@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiBaseUrl = 'http://127.0.0.1:10000/api';
+    const apiBaseUrl = 'https://license-system-nu.vercel.app/api';
     const deleteUserBtn = document.getElementById('deleteUserBtn');
     const deleteCarLicenseBtn = document.getElementById('deleteCarLicenseBtn');
     const deleteMotorcycleLicenseBtn = document.getElementById('deleteMotorcycleLicenseBtn');
