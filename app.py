@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import requests
 import os
@@ -66,9 +66,17 @@ api_classes = {
     "violations": ViolationAPI(BASE_URL)
 }
 
-@app.route('/')
-def home():
-    return jsonify({"message": "Welcome to the API"}), 200
+# 根路徑，返回 index.html
+@app.route('/', methods=['GET', 'HEAD'])
+def serve_index():
+    if request.method == 'HEAD':
+        return '', 200  # HEAD 請求只需要返回標頭即可
+    return send_from_directory('.', 'index.html')  # 假設 index.html 位於 static 文件夾
+
+# 提供根目錄的靜態文件
+@app.route('/<path:filename>', methods=['GET'])
+def serve_root_files(filename):
+    return send_from_directory('.', filename)
 
 # 定義路由
 @app.route('/api/<resource>', methods=['GET'])
