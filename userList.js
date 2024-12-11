@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * Fetch all users from the backend API
      */
     function fetchUsers() {
-        fetch(`https://license-system-nu.vercel.app/api/users`)
+        fetch(`${apiBaseUrl}/users`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch users');
