@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const apiBaseUrl = 'http://127.0.0.1:10000/api';
+    const apiBaseUrl = 'https://license-system-nu.vercel.app/api';
     const userIdInput = document.getElementById('userIdInput');
     const userList = document.getElementById('user-list');
 
