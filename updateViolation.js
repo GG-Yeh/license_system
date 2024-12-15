@@ -111,32 +111,26 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const requestOptions = {
-            method: violationId ? 'PUT' : 'POST',
+        fetch(`${apiBaseUrl}/violations/${violationId}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(violationData),
-        };
-
-        const url = violationId
-            ? `${apiBaseUrl}/violations/${violationId}`
-            : `${apiBaseUrl}/violations`;
-
-        fetch(url, requestOptions)
+            body: JSON.stringify(updatedUserData),
+        })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`Failed to ${violationId ? 'update' : 'create'} violation`);
+                    throw new Error(`Failed to update violation`);
                 }
                 return response.json();
             })
             .then(data => {
-                alert(`Violation ${violationId ? 'updated' : 'created'} successfully!`);
+                alert('Violation updated successfully!');
                 window.location.href = 'violationList.html';
             })
             .catch(error => {
-                console.error(`Error ${violationId ? 'updating' : 'creating'} violation:`, error);
-                alert(`Error occurred while ${violationId ? 'updating' : 'creating'} violation.`);
+                console.error('Error updating violation:', error);
+                alert('Error occurred while updating violation.');
             });
     }
 });
