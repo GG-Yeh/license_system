@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        /* 修改輸入框的背景顏色為白色 */
+        input.form-control[disabled], select.form-control {
+            background-color: white !important;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 頁首的黑條，可以加入多個連結 -->
+    <script src="navInit.js"></script>
+
+    <div class="p-5 text-left border-bottom">
+        <h1>Update User</h1>
+        <div class="col-lg">
+            <p class="lead m-1">
+                Update user data: ID, Name, Contact Information, Gender, Birthday
+            </p>
+        </div>
+    </div>
+
+    <div class="container py-5 text-center">
+        <!-- 用戶基本信息 -->
+        <div class="row py-2">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon1">User ID</span>
+                    <input id="id" type="text" class="form-control" aria-label="ID" disabled>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon2">Name</span>
+                    <input id="name" type="text" class="form-control" aria-label="Name">
+                </div>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Birthday (YYYY-MM-DD)</span>
+                <input id="birthday" type="date" class="form-control" aria-label="Birthday" disabled>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon2">Sex</span>
+                    <select id="sex" class="form-control" aria-label="Sex">
+                        <option value="" selected disabled>Choose Sex...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="input-group">
+                    <span class="input-group-text" id="basic-addon2">Contact</span>
+                    <input id="contact" type="text" class="form-control" aria-label="Contact">
+                </div>
+            </div>
+        </div>
+
+        <!-- 執照信息 -->
+        <div class="mt-4">
+            <!-- License 1 -->
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">License Type</span>
+                        <input id="license1-type" type="text" class="form-control" value="Car" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">License Number</span>
+                        <input id="license1-number" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">License Expiry Date (YYYY-MM-DD)</span>
+                    <input id="license1-expiry" type="date" class="form-control">
+                </div>
+                <div class="text-start py-2">
+                    <button id="deleteCarLicenseBtn" class="btn btn-danger">Delete Car License</button>
+                </div>
+            </div>
+            <!-- License 2 -->
+            <div class="row py-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">License Type</span>
+                        <input id="license2-type" type="text" class="form-control" value="Motorcycle" disabled>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <span class="input-group-text">License Number</span>
+                        <input id="license2-number" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">License Expiry Date (YYYY-MM-DD)</span>
+                    <input id="license2-expiry" type="date" class="form-control">
+                </div>
+                <div class="text-start py-2">
+                    <button id="deleteMotorcycleLicenseBtn" class="btn btn-danger">Delete Motorcycle License</button>
+                </div>
+            </div>
+            <div class="container text-center py-4">
+                <button id="deleteUserBtn" class="btn btn-danger" role="button">Delete User</button>
+                <button id="updateUserBtn" class="btn btn-info" role="button">Sent</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="updateUser.js"></script>
+</body>
+</html>
